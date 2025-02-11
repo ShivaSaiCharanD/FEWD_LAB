@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        const cvHandle = (id) => {
+            const fileInput = document.querySelector(`#file-${id}`);
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                document.getElementById(`cv-name-${id}`).innerText = file.name;
+            }
+        }
+    </script>
+</head>
+<body>
+    <table id="students">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>CV</th>
+                <th>Project Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Ram</td>
+                <td><img src="https://via.placeholder.com/150" alt="Ram"></td>
+                <td>
+                    <input type="file" accept="application/pdf" id="file-1" onchange="cvHandle('1')">
+                    <p id="cv-name-1"></p>
+                </td>
+                <td><a href="https://www.w3schools.com" target="_blank">Project Details</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sam</td>
+                <td><img src="https://via.placeholder.com/150" alt="Sam"></td>
+                <td>
+                    <input type="file" accept="application/pdf" id="file-2" onchange="cvHandle('2')">
+                    <p id="cv-name-2"></p>
+                </td>
+                <td><a href="https://www.w3schools.com" target="_blank">Project Details</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Jam</td>
+                <td><img src="https://via.placeholder.com/150" alt="Jam"></td>
+                <td>
+                    <input type="file" accept="application/pdf" id="file-3" onchange="cvHandle('3')">
+                    <p id="cv-name-3"></p>
+                </td>
+                <td><a href="https://www.w3schools.com" target="_blank">Project Details</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

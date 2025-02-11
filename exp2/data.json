@@ -1,0 +1,55 @@
+{
+    "Introduction" : "I am Shiva Sai Charan Dodda from Hyderabad, India. I am a student of Computer Science and Engineering at Keshav Memorial Institute of Technology, Hyderabad. I am a passionate programmer and a web developer. I have a good knowledge of programming languages like C, C++, Java, Python, and web development languages like HTML, CSS, JavaScript. I am also familiar with the frameworks like Bootstrap, React, and Node.js. I have a good knowledge of databases like MySQL and MongoDB. I am also familiar with the version control system like Git. I am a quick learner and a team player. I am always ready to learn new things and work on new projects.",
+    "Skills":{
+            "Programming Languages": ["C", "C++", "Java", "Python"],
+            "Web Development": ["HTML", "CSS", "JavaScript"],
+            "Frameworks": ["Next", "React", "Node.js", "Vite"],
+            "Databases": ["MySQL", "MongoDB"],
+            "Version Control System": ["Git"],
+            "Cloud Platforms": ["Azure", "AWS", "Google Cloud"]
+    },
+    "Projects": [
+        {
+            "ProjectName": "Tires on Highways",
+            "Description": "Developed a web application that analyzes tire conditions through images captured at toll plazas",
+            "Technologies": ["MERN", "TensorFlow", "Flask"]
+        },
+        {
+            "ProjectName": "Technology for Autism and Dyslexia",
+            "Description": "Developing a full-ﬂedged center management system , enabling efﬁcient scheduling, user management, and data handling. Implemented role-based access control, secure authentication, and responsive design for a seamless user experience.",
+            "Technologies": ["MERN", "PixiJS"]
+        },
+        {
+            "ProjectName": "Chat Application",
+            "Description": "Developed a chat application that allows users to chat with each other in real-time",
+            "Technologies": ["Flutter", "Firestore", "ExpressJS", "MongoDB", "Socket.io"]
+        }
+    ],
+    "Achievements": [ "Completed Google Cloud Certification courses", "Completed AWS Beginner Training"],
+    "Education": [
+        {
+            "Degree": "B.Tech",
+            "Branch": "Computer Science and Engineering",
+            "College": "Keshav Memorial Institute of Technology",
+            "Location": "Hyderabad, India",
+            "Year": "2022"
+        },
+        {
+            "Degree": "Intermediate",
+            "Branch": "MPC",
+            "College": "Sri Chaitanya Junior College",
+            "Location": "Hyderabad, India",
+            "Year": "2018"
+        },
+        {
+            "Degree": "SSC",
+            "School": "Sri Chaitanya Techno School",
+            "Location": "Hyderabad, India",
+            "Year": "2016"
+        }
+    ],
+    "Contact":{
+        "Email": "shivasaicharandodda@gmail.com",
+        "LinkedIN": "https://www.linkedin.com/in/shiva-sai-charan-dodda-29834a248/"
+    }
+}

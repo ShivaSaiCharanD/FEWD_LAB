@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<body>
+    <h1>
+        Navigation Bar
+    </h1>
+    <nav>
+        <ul>
+            <a href="/Home.html" target="_top">Home</a>
+            <a href="/SignUp.html">Signup</a>
+            <a href="/Login.html">Login</a>
+            <a href="/Search.html">Search</a>
+        </ul>
+    </nav>
+    <h2>Sign Up</h2>
+    <form style="display: flex; flex-direction: column;">
+        <label for="username"style="margin-top: 10px;">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" style="width: 20%; margin-top: 10px;"/>
+        <label for="password"style="margin-top: 10px;">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" style="width: 20%;margin-top: 10px"/>
+        <label for="confirmPassword" style="margin-top: 10px;">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" style="width: 20%;margin-top: 10px"/>
+        <button onclick="alert('SignUp Completed')" style="width: 10%; margin-top: 10px;">SignUp</button>
+    </form>
+</body>
+</html>
