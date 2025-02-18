@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <!-- <style>
+      body {
+        background-color: rgb(215, 245, 242);
+      }
+      nav {
+        
+        background-color: rgb(248, 239, 239);
+      }
+      nav ul {
+        display: flex;
+        padding-left: 350px;
+        justify-content: space-between;
+        width: 50%;
+        padding-bottom: 20px;
+      }
+      nav a {
+        padding: 10px 20px;
+        border: 2px solid black;
+        background-color: white;
+        border-radius: 5px;
+        margin-left: 10px;
+        max-width: 200px;
+        color: black;
+        font-weight: bold;
+      }
+
+      section {
+        max-width: 900px;
+        padding: 20px;
+        margin: auto;
+        background-color: rgb(248, 239, 239);
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      #projects div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 20px;
+      }
+
+      .project-box {
+        padding: 10px;
+        border: 2px solid #ccc;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style> -->
+  </head>
+  <body>
+    <nav>
+      <div>
+        <h1 style="text-align: center">Portfolio</h1>
+      </div>
+      <ul>
+        <a href="#intro">Introduction</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects/Work Experience</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#education">Education Profile</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#contact">Contact Information</a>
+      </ul>
+    </nav>
+    <div>
+      <section id="intro">
+        <h2>Introduction</h2>
+        <p id="intro-para"></p>
+      </section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul id="skills-ul"></ul>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <div id="projects-list"></div>
+      </section>
+      <section id="achievements">
+        <h2>Achievements</h2>
+        <ul id="achievements-ul"></ul>
+      </section>
+      <section id="education">
+        <h2>Education</h2>
+        <ul id="education-ul"></ul>
+      </section>
+      <section id="feedback">
+        <h2>Feedback</h2>
+        <form onsubmit="event.preventDefault(); handleFeedback();">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="feedback">Feedback:</label>
+          <textarea id="feedback" name="feedback" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      <section id="contact">
+        <h2>Contact Information</h2>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:shivasaicharandodda@gmail.com"
+            >shivasaicharandodda@gmail.com</a
+          >
+        </p>
+        <p><strong>Phone:</strong> 8008972795</p>
+        <p>
+          <strong>LinkedIn:</strong>
+          <a
+            href="https://www.linkedin.com/in/shiva-sai-charan-dodda-29834a248/"
+            >Shiva Sai Charan Dodda</a
+          >
+        </p>
+      </section>
+    </div>
+
+    <script>
+      let data = {};
+      const fetchData = async () => {
+        try {
+          const response = await fetch("./data.json");
+          data = await response.json();
+          console.log(data);
+          setData();
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+
+      const setData = () => {
+        document.getElementById("intro-para").innerText =
+          data["Introduction"] || "No introduction available.";
+
+        const skills = data["Skills"];
+        const skillsList = document.getElementById("skills-ul");
+        skillsList.innerHTML = "";
+        for (const category in skills) {
+          const categoryItem = document.createElement("li");
+          categoryItem.innerHTML = `<strong>${category}</strong>: ${skills[
+            category
+          ].join(", ")}`;
+          skillsList.appendChild(categoryItem);
+        }
+
+        const projects = data["Projects"];
+        const projectsList = document.getElementById("projects-list");
+        projectsList.innerHTML = "";
+        for (const project of projects) {
+          const projectItem = document.createElement("div");
+          projectItem.classList.add("project-box"); // Add the 'project-box' class for styling
+          projectItem.innerHTML = `
+      <h3>${project.ProjectName}</h3>
+      <p><strong>Description:</strong> ${project.Description}</p>
+      <p><strong>Technologies:</strong> ${project.Technologies.join(", ")}</p>
+      <p><strong>GitHub Link:</strong> <a href="${
+        project.GitHubLink
+      }" target="_blank">${project.ProjectName}</a></p>
+    `;
+          projectsList.appendChild(projectItem);
+        }
+
+        const achievements = data["Achievements"];
+        const achievementsList = document.getElementById("achievements-ul");
+        achievementsList.innerHTML = "";
+        for (const achievement of achievements) {
+          const achievementItem = document.createElement("li");
+          achievementItem.innerText = achievement;
+          achievementsList.appendChild(achievementItem);
+        }
+
+        const education = data["Education"];
+        const educationList = document.getElementById("education-ul");
+        educationList.innerHTML = "";
+        for (const educationItem of education) {
+          const educationItemElement = document.createElement("li");
+          educationItemElement.innerHTML = `
+      <p><strong>Degree:</strong> ${educationItem.Degree}</p>
+      <p><strong>Branch:</strong> ${educationItem.Branch}</p>
+      <p><strong>College:</strong> ${educationItem.College}</p>
+      <p><strong>Location:</strong> ${educationItem.Location}</p>
+      <p><strong>Year:</strong> ${educationItem.Year}</p>
+    `;
+          educationList.appendChild(educationItemElement);
+        }
+      };
+
+      fetchData();
+      const handleFeedback = () => {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const feedback = document.getElementById("feedback").value;
+        console.log(name, email, feedback);
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("feedback").value = "";
+        alert(`
+            Name: ${name}
+            Email: ${email}
+            Feedback: ${feedback}
+            FeedBack Submitted!
+        `);
+      };
+    </script>
+  </body>
+</html>

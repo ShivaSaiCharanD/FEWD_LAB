@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+    <!-- <style>
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+      form {
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+        margin: auto;
+        padding: 20px;
+        border: 1px;
+        border-radius: 10px;
+        background-color: rgb(233, 229, 229);
+      }
+      label {
+        margin-top: 10px;
+      }
+      input,
+      textarea,
+      .rating-buttons {
+        margin-top: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+      }
+      button {
+        background-color: rgb(24, 183, 231);
+        color: black;
+        cursor: pointer;
+        margin-left: 10px;
+        border-color: aqua;
+        
+      }
+      button:hover {
+        background-color: lightblue;
+      }
+      button[type="submit"] {
+        margin-top: 20px;
+        max-width: 80px;
+        border-radius: 5px;
+        padding: 10px;
+      }
+    </style> -->
+  </head>
+  <body>
+    <h1>Feedback</h1>
+    <form
+      onsubmit="e.preventDefault(); alert('Feedback Submitted Successfully')"
+    >
+      <label for="Name">Name(Optional)</label>
+      <input type="text" />
+      <label for="Email">Email(Optional)</label>
+      <input type="email" />
+      <label for="Phone">Phone(Optional)</label>
+      <input type="number" />
+      <label for="Rating">Rating</label>
+      <div class="rating-buttons">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+      </div>
+      <label for="Questions">Any Questions regarding product or service.</label>
+      <textarea name="" id=""></textarea>
+      <label for="Comments">Additional Comments</label>
+      <textarea name="" id=""></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
